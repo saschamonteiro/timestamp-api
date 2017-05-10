@@ -1,7 +1,7 @@
 var express = require('express')
 var moment = require('moment')
 var app = express()
-
+var port = process.env.PORT || 8080
 app.get('/:dateobj', function (req, res) {
   console.log(req.params.dateobj)
   var m = moment(req.params.dateobj)
@@ -17,6 +17,6 @@ app.get('/:dateobj', function (req, res) {
   }
 })
 
-app.listen(8080, function () {
-  console.log('Example app listening on port 8080!')
+app.listen(port, function () {
+  console.log('Example app listening on port '+port)
 })
